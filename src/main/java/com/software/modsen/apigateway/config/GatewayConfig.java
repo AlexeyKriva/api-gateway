@@ -14,6 +14,8 @@ public class GatewayConfig {
                         .uri("lb://passenger-microservice"))
                 .route("driverService", d -> d.path("/api/driver/**")
                         .uri("lb://driver-microservice"))
+                .route("driverService", d -> d.path("/api/car/**")
+                        .uri("lb://driver-microservice"))
                 .route("ridesService", r -> r.path("/api/ride/**")
                         .uri("lb://rides-microservice"))
                 .route("ratingService", r -> r.path("/api/rating/**")
