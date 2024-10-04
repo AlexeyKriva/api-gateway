@@ -20,6 +20,8 @@ public class GatewayConfig {
                         .uri("lb://rides-microservice"))
                 .route("ratingService", r -> r.path("/api/rating/**")
                         .uri("lb://rating-microservice"))
+                .route("ratingService", r -> r.path("/api/rating-source/**")
+                        .uri("lb://rating-microservice"))
                 .build();
     }
 }

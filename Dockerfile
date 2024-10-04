@@ -11,7 +11,7 @@ RUN mvn package -DskipTests
 
 FROM openjdk:17-jdk
 
-COPY /target/api-gateway-0.0.1-SNAPSHOT.jar /gateway/launch-gateway.jar
+COPY /target/api-gateway*.jar /gateway/launch-gateway.jar
 
 ENTRYPOINT ["java","-jar","/gateway/launch-gateway.jar"]
 
