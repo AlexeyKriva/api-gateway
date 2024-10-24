@@ -10,17 +10,17 @@ public class GatewayConfig {
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("passengerService", p -> p.path("/api/passenger/**")
+                .route("passengerService", p -> p.path("/api/passengers/**")
                         .uri("lb://passenger-microservice"))
-                .route("driverService", d -> d.path("/api/driver/**")
+                .route("driverService", d -> d.path("/api/drivers/**")
                         .uri("lb://driver-microservice"))
-                .route("driverService", d -> d.path("/api/car/**")
+                .route("carService", d -> d.path("/api/cars/**")
                         .uri("lb://driver-microservice"))
-                .route("ridesService", r -> r.path("/api/ride/**")
+                .route("ridesService", r -> r.path("/api/rides/**")
                         .uri("lb://rides-microservice"))
-                .route("ratingService", r -> r.path("/api/rating/**")
+                .route("ratingService", r -> r.path("/api/ratings/**")
                         .uri("lb://rating-microservice"))
-                .route("ratingService", r -> r.path("/api/rating-source/**")
+                .route("ratingSourceService", r -> r.path("/api/ratings/sources/**")
                         .uri("lb://rating-microservice"))
                 .build();
     }
